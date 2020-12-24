@@ -1,12 +1,19 @@
-# kubebuilder-sample
+# Hello Operator
+- [kubebuilder-sample](kubebuilder-sample)
+- [operator-sdk-sample](operator-sdk-sample)
 
-### init
+> [Kubebuilder](https://github.com/kubernetes-sigs/kubebuilder) and [Operator SDK](https://github.com/operator-framework/operator-sdk) have long been seen as competitors in the field of Operator tooling, when in reality there was collaboration going on for some time already. 
+> Now, with the Operator Framework being incubated into CNCF, we are coming together on a single solution that creates Golang Operators (Kubebuilder) while the SDK provides a holistic experience in creating, testing, bundling and releasing Operators.
+> https://www.openshift.com/blog/operator-sdk-reaches-v1.0
+
+## Guestbook Sample
+### 1 init
 ```sh
 sh build_sample.sh
 sh open_sample.sh
 ```
 
-### edit
+### 2 edit
 1. api/v1/guestbook_types.go:32
    ```go
    BookName string `json:"book_name,omitempty"`
@@ -37,7 +44,7 @@ sh open_sample.sh
    spec:
      book_name: kubebuilder-operator-sample
    ```
-### rebuild&run
+### 3 rebuild&run
 ```sh
 sh rebuild_sample.sh
 ```
@@ -46,7 +53,7 @@ sh rebuild_sample.sh
 sh test_sample.sh
 ```
 
-### cleanup
+### 4 cleanup
 ```sh
 echo "Uninstall CRDs"
 make uninstall
